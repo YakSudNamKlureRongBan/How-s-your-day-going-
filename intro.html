@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</head>
+<body class="w3-white">
+<div class="w3-display-container">
+    <img src="img4.jpg"  style="width:100%;height:615px">
+    <div class="w3-display-middle w3-large">
+        <h1 class="w3-xxlarge w3-text-white w3-wide w3-animate-fading" style="text-shadow:5px 5px 0 #444"><b>HOW'S YOUR DAY GOING?</b></h1>
+    </div>
+    <div class="w3-display-bottomright w3-container">
+        <p class="w3-text-white w3-xlarge"></p>
+    </div>
+</div>
+<div class="w3-display-container">
+    <img src="imgintro2.png"  style="width:100%;height:615px">
+    <div class="w3-display-middle w3-large">
+        <div>
+        
+
+
+        </div>
+        <div class="w3-panel w3-center w3-leftbar">
+            <p><i class="w3-serif w3-xlarge">
+            <span style="font-size:150px;line-height:0.6em;opacity:0.2">&#10004;</span>
+            Programming in C will slowly decline.<br>
+            Programming in JavaScript will be more important.</i></p>
+        </div>        
+    </div>
+    <div class="w3-display-bottomright w3-container">
+        <p class="w3-text-white w3-xlarge"></p>
+    </div>
+</div>
+<div class="w3-display-container">
+    <div class="page">
+        <label class="field field_v1">
+          <input type="date" class="field__input" name="appointmentdate" min="2020-01-01" max="2030-12-31" step="1" placeholder="e.g. 01/10/2020">
+          <form action="../../form-result.php" method="post" target="_blank">
+          </form>
+          <span class="field__label-wrap">
+            <span class="field__label">Date :</span>
+          </span>
+        </label>
+        <label class="field field_v2">
+          <input class="field__input" placeholder="e.g. Chotipat">
+          <span class="field__label-wrap">
+            <span class="field__label">Name :</span>
+          </span>
+        </label>
+        <button type="button" class="btn">submit</button>
+      </div>
+      
+      <style>
+        .field__input{ 
+      --uiFieldPlaceholderColor: var(--fieldPlaceholderColor, #767676);
+      
+      background-color: transparent;
+      border-radius: 0;
+      border: none;
+    
+      -webkit-appearance: none;
+      -moz-appearance: none;
+    
+      font-family: inherit;
+      font-size: inherit;
+    }
+    
+    .field__input:focus::-webkit-input-placeholder{
+      color: var(--uiFieldPlaceholderColor);
+    }
+    
+    .field__input:focus::-moz-placeholder{
+      color: var(--uiFieldPlaceholderColor);
+    }
+    
+    /*
+    =====
+    CORE STYLES
+    =====
+    */
+    
+    .field{
+      --uiFieldBorderWidth: var(--fieldBorderWidth, 2px);
+      --uiFieldPaddingRight: var(--fieldPaddingRight, 1rem);
+      --uiFieldPaddingLeft: var(--fieldPaddingLeft, 1rem);   
+      --uiFieldBorderColorActive: var(--fieldBorderColorActive, rgba(22, 22, 22, 1));
+    
+      display: var(--fieldDisplay, inline-flex);
+      position: relative;
+      font-size: var(--fieldFontSize, 1rem);
+    }
+    
+    .field__input{
+      box-sizing: border-box;
+      width: var(--fieldWidth, 100%);
+      height: var(--fieldHeight, 4rem);
+      padding: var(--fieldPaddingTop, 1.25rem) var(--uiFieldPaddingRight) var(--fieldPaddingBottom, .5rem) var(--uiFieldPaddingLeft);
+      border-bottom: var(--uiFieldBorderWidth) solid var(--fieldBorderColor, rgba(0, 0, 0, .25));  
+    }
+    
+    .field__input:focus{
+      outline: none;
+    }
+    
+    .field__input::-webkit-input-placeholder{
+      opacity: 0;
+      transition: opacity .2s ease-out;
+    }
+    
+    .field__input::-moz-placeholder{
+      opacity: 0;
+      transition: opacity .2s ease-out;
+    }
+    
+    .field__input:focus::-webkit-input-placeholder{
+      opacity: 1;
+      transition-delay: .2s;
+    }
+    
+    .field__input:focus::-moz-placeholder{
+      opacity: 1;
+      transition-delay: .2s;
+    }
+    
+    .field__label-wrap{
+      box-sizing: border-box;
+      pointer-events: none;
+      cursor: text;
+    
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+    }
+    
+    .field__label-wrap::after{
+      content: "";
+      box-sizing: border-box;
+      width: 100%;
+      height: 0;
+      opacity: 0;
+    
+      position: absolute;
+      bottom: 0;
+      left: 0;
+    }
+    
+    .field__input:focus ~ .field__label-wrap::after{
+      opacity: 1;
+    }
+    
+    .field__label{
+      position: absolute;
+      left: var(--uiFieldPaddingLeft);
+      top: calc(50% - .5em);
+    
+      line-height: 1;
+      font-size: var(--fieldHintFontSize, inherit);
+    
+      transition: top .2s cubic-bezier(0.9, -0.15, 0.1, 1.15), opacity .2s ease-out, font-size .2s ease-out;
+      will-change: bottom, opacity, font-size;
+    }
+    
+    .field__input:focus ~ .field__label-wrap .field__label,
+    .field__input:not(:placeholder-shown) ~ .field__label-wrap .field__label{
+      --fieldHintFontSize: var(--fieldHintFontSizeFocused, .75rem);
+    
+      top: var(--fieldHintTopHover, .25rem);
+    }
+    
+    /* 
+    effect 1
+    */
+    
+    .field_v1 .field__label-wrap::after{
+      border-bottom: var(--uiFieldBorderWidth) solid var(--uiFieldBorderColorActive);
+      transition: opacity .2s ease-out;
+      will-change: opacity;
+    }
+    
+    /* 
+    effect 2
+    */
+    
+    .field_v2 .field__label-wrap{
+      overflow: hidden;
+    }
+    
+    .field_v2 .field__label-wrap::after{
+      border-bottom: var(--uiFieldBorderWidth) solid var(--uiFieldBorderColorActive);
+      transform: translate3d(-105%, 0, 0);
+      will-change: transform, opacity;
+      transition: transform .285s ease-out .2s, opacity .2s ease-out .2s;
+    }
+    
+    .field_v2 .field__input:focus ~ .field__label-wrap::after{
+      transform: translate3d(0, 0, 0);
+      transition-delay: 0;
+    }
+    
+    /*
+    effect 3
+    */
+    
+    .field_v3 .field__label-wrap::after{
+      border: var(--uiFieldBorderWidth) solid var(--uiFieldBorderColorActive);
+      will-change: opacity, height;
+      transition: height .2s ease-out, opacity .2s ease-out;
+    }
+    
+    .field_v3 .field__input:focus ~ .field__label-wrap::after{
+      height: 100%;
+    }
+    
+    /*
+    =====
+    LEVEL 4. SETTINGS
+    =====
+    */
+    
+    .field{
+      --fieldBorderColor: #DBCAB3;
+      --fieldBorderColorActive: #F89C1F;
+    }
+    
+    /*
+    =====
+    DEMO
+    =====
+    */
+    body{
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Open Sans, Ubuntu, Fira Sans, Helvetica Neue, sans-serif;
+  margin: 0;
+
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.page{
+  box-sizing: border-box;
+  width: 100%;
+  max-width: 480px;
+  margin: auto;
+  padding: 1rem;
+
+  display: grid;
+  grid-gap: 30px;
+}
+  </style>
+</div>
+<div class="w3-display-container">
+  <header>
+    <h1>Diary</h1>
+  </header>
+  
+  <div id="form">
+  
+  <div class="fish" id="fish"></div>
+  <div class="fish" id="fish2"></div>
+  
+  <form id="waterform" method="post">
+  
+  <div class="formgroup" id="name-form">
+      <label for="name">Title</label>
+      <input type="text" id="name" name="name" />
+  </div>
+  
+  <div class="formgroup" id="message-form">
+      <label for="message">Can you tell us?</label>
+      <textarea id="message" name="message"></textarea>
+  </div>
+  
+    <input type="submit" value="Send your message!" />
+  </form>
+  </div>
+  <style>
+    @import url(https://fonts.googleapis.com/css?family=Sniglet|Raleway:900);
+  
+  
+  body, html{
+    height: 100%;
+    padding: 0;
+    margin: 0;
+    font-family: 'Sniglet', cursive;
+  }
+  h1{
+    font-weight: normal;
+    font-size: 4em;
+    font-family: 'Raleway', sans-serif;
+    margin: 0 auto;
+    margin-top: 30px;
+    width: 500px;
+    color: #F90;
+    text-align: center;
+  
+  }
+  
+  /* Animation webkit */
+  @-webkit-keyframes myfirst
+  {
+    0% {margin-left: -235px}
+    90% {margin-left: 100%;}
+    100% {margin-left: 100%;}
+  }
+  
+  /* Animation */
+  @keyframes myfirst
+  {
+    0% {margin-left: -235px}
+    70% {margin-left: 100%;}
+    100% {margin-left: 100%;}
+  }
+  
+  .fish{
+    background-image: url('http://www.geertjanhendriks.nl/codepen/form/fish.png');
+    width: 235px;
+    height: 104px;
+    margin-left: -235px;
+    position: absolute;	
+    animation: myfirst 24s;
+    -webkit-animation: myfirst 24s;
+    animation-iteration-count: infinite;
+    -webkit-animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    -webkit-animation-timing-function: linear;
+  }
+  
+  #fish{
+    top: 120px;
+  }
+  
+  #fish2{
+    top: 260px;
+    animation-delay: 12s;
+    -webkit-animation-delay: 12s;
+  }
+  
+  
+  header{
+    height: 160px;
+    background: url('http://www.geertjanhendriks.nl/codepen/form/golf.png') repeat-x bottom;
+  }
+  
+  #form{
+    height: 100%;	
+    background-color: #98d4f3;
+    overflow: hidden;
+    position: relative;
+    
+  }
+  form{
+    margin: 0 auto;
+    width: 500px;
+    padding-top: 40px;
+    color: white;
+    position: relative;
+    
+    
+  }
+  label, input, textarea{
+    display: block;	
+  }
+  input, textarea{
+    width: 500px;	
+    border: none;
+    border-radius: 20px;
+    outline: none;
+    padding: 10px;
+    font-family: 'Sniglet', cursive;
+    font-size: 1em;
+    color: #676767;
+    transition: border 0.5s;
+    -webkit-transition: border 0.5s;
+    -moz-transition: border 0.5s;
+    -o-transition: border 0.5s;
+    border: solid 3px #d998f3;	
+    -webkit-box-sizing:border-box;
+    -moz-box-sizing:border-box;
+    box-sizing:border-box;
+    
+  }
+  input:focus, textarea:focus{
+    border: solid 3px #77bde0;	
+  }
+  
+  textarea{
+    height: 100px;	
+    resize: none; 
+    overflow: auto;
+  }
+  input[type="submit"]{
+    background-color: #F90;
+    color: white;
+    height: 50px;
+    cursor: pointer;
+    margin-top: 30px;
+    font-size: 1.29em;
+    font-family: 'Sniglet', cursive;
+    -webkit-transition: background-color 0.5s;
+    -moz-transition: background-color 0.5s;
+    -o-transition: background-color 0.5s;
+    transition: background-color 0.5s;
+  }
+  input[type="submit"]:hover{
+    background-color: #e58f0e;
+    
+  }
+  label{
+    font-size: 1.5em;
+    margin-top: 20px;
+    padding-left: 20px;
+  }
+  .formgroup, .formgroup-active, .formgroup-error{
+    background-repeat: no-repeat;
+    background-position: right bottom;
+    background-size: 10.5%;
+    transition: background-image 0.7s;
+    -webkit-transition: background-image 0.7s;
+    -moz-transition: background-image 0.7s;
+    -o-transition: background-image 0.7s;
+    width: 566px;
+    padding-top: 2px;
+  }
+  
+  .formgroup{
+    background-image: url('http://www.geertjanhendriks.nl/codepen/form/pixel.gif');	
+  }
+  .formgroup-active{
+    background-image: url('http://www.geertjanhendriks.nl/codepen/form/octo.png');
+  }
+  .formgroup-error{
+    background-image: url('http://www.geertjanhendriks.nl/codepen/form/octo-error.png');
+    color: red;
+  }
+  </style>
+  <script>
+    $('document').ready(function(){
+    $('input[type="text"], input[type="email"], textarea').focus(function(){
+      var background = $(this).attr('id');
+      $('#' + background + '-form').addClass('formgroup-active');
+      $('#' + background + '-form').removeClass('formgroup-error');
+    });
+    $('input[type="text"], input[type="email"], textarea').blur(function(){
+      var background = $(this).attr('id');
+      $('#' + background + '-form').removeClass('formgroup-active');
+    });
+  
+  function errorfield(field){
+    $(field).addClass('formgroup-error');
+    console.log(field);	
+  }
+  
+  $("#waterform").submit(function() {
+    var stopsubmit = false;
+  
+  if($('#name').val() == "") {
+    errorfield('#name-form');
+    stopsubmit=true;
+  }
+  if($('#email').val() == "") {
+    errorfield('#email-form');
+    stopsubmit=true;
+  }
+    if(stopsubmit) return false;
+  });
+      
+  });
+  </script>
+</div>
+</body>
+</html>
