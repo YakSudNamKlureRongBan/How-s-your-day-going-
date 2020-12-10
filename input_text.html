@@ -33,8 +33,8 @@
         <div class="wrap-contact100">
             <form class="contact100-form validate-form" method="POST" action="show_index.php">
                 <span class="contact100-form-title">
-					Send Us A Message
-				</span>
+			Story
+		</span>
 
                 <div class="wrap-input100 validate-input" data-validate="Please enter your name">
                     <input class="input100" type="text" id="name" name="name" placeholder="Name">
@@ -42,7 +42,7 @@
                 </div>
 
                 <div class="wrap-input100 validate-input" data-validate="Please enter your email: e@a.x">
-                    <input class="input100" type="text" id="Date" name="Date" placeholder="Date">
+                    <input class="input100" type="date" id="Date" name="Date" name="appointmentdate" min="2020-01-01" max="2030-12-31" step="1" placeholder="e.g. 01/10/2020">
                     <span class="focus-input100"></span>
                 </div>
 
@@ -58,11 +58,11 @@
 
                 <div class="container-contact100-form-btn">
                     <button class="contact100-form-btn">
-						<span>
-							<i class="fa fa-paper-plane-o m-r-6" aria-hidden="true"></i>
-							Send
-						</span>
-					</button>
+				<span>
+				<i class="fa fa-paper-plane-o m-r-6" aria-hidden="true"></i>
+					Send
+				</span>
+			</button>
                 </div>
             </form>
         </div>
@@ -88,19 +88,6 @@
     <script src="vendor/countdowntime/countdowntime.js"></script>
     <!--===============================================================================================-->
     <script src="js/main.js"></script>
-
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-23581568-13"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-
-        function gtag() {
-            dataLayer.push(arguments);
-        }
-        gtag('js', new Date());
-
-        gtag('config', 'UA-23581568-13');
-    </script>
 
 </body>
 
