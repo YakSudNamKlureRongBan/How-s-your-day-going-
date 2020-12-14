@@ -1,0 +1,88 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: seashell;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+header {
+    max-width: 100%;
+    width: auto;
+    background: black;
+    margin: 0 auto;
+}
+
+.about-project {
+    padding: 10px;
+    text-align: center;
+    font-size: 2rem;
+}
+
+.long-text {
+    padding: 10px;
+    font-size: 2rem;
+    text-indent: 70px;
+}
+
+.meet-our-teams {
+    text-align: center;
+    font-size: 2rem;
+}
+
+#logo {
+    color: white;
+    margin: 20px;
+    font-size: 2rem;
+}
+
+.grid-items {
+    text-align: right;
+    margin-top: 25px;
+}
+
+ul.home-page li {
+    list-style: none;
+}
+
+ul.home-page a {
+    text-decoration: none;
+    color: white;
+    transition: .3 ease-in-out;
+    padding: 5px 10px;
+    font-size: 1.5rem;
+    margin: 30px;
+}
+
+ul.home-page a:hover {
+    background: rgb(99, 185, 224);
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+
+.grid-teams {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(5, 1fr);
+    grid-gap: 1rem;
+    margin-top: 40px;
+    justify-items: center;
+}
+
+.content-teams-grid {
+    border: 5px solid rgb(99, 185, 224);
+    width: 400px;
+    margin: 0;
+    height: 300px;
+    text-align: center;
+    padding-top: 200px;
+    background: white;
+    border-radius: 20px;
+}
