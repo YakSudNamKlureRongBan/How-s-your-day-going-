@@ -2,40 +2,108 @@
 <html lang="en">
 
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-    <h1 style="text-align:center;">Diary : <?php echo $_POST['Diary'];?></h1>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <style>
-        h1   {font-size:400%; color:rgb(60, 179, 113);
+        @import url(https://fonts.googleapis.com/css?family=Roboto);
+        @import url(https://fonts.googleapis.com/css?family=Handlee);
+        body {
+            margin: 40px 0 0;
+            background: #91D1D3;
+            font-family: 'Roboto', sans-serif;
         }
-        body {background-image: url('wallpaper.jpg');
+        
+        .paper {
+            position: relative;
+            width: 90%;
+            max-width: 800px;
+            min-width: 400px;
+            height: 480px;
+            margin: 0 auto;
+            background: #fafafa;
+            border-radius: 10px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, .3);
+            overflow: hidden;
+        }
+        
+        .paper:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            width: 50px;
+            background: radial-gradient(#575450 6px, transparent 7px) repeat-y;
+            background-size: 30px 30px;
+            border-right: 3px solid #D44147;
+            box-sizing: border-box;
+        }
+        
+        .paper-content {
+            position: absolute;
+            top: 30px;
+            right: 0;
+            bottom: 30px;
+            left: 60px;
+            background: linear-gradient(transparent, transparent 28px, #91D1D3 28px);
+            background-size: 30px 30px;
+        }
+        
+        .paper-head {
+            display: grid;
+            grid-template-columns: 1fr 1fr 200px;
+        }
+        
+        .paper-items-text {
+            grid-column-start: 1;
+            grid-column-end: 4;
+        }
+        
+        .paper-content textarea {
+            width: 100%;
+            max-width: 100%;
+            height: 400px;
+            max-height: 100%;
+            line-height: 30px;
+            padding: 30px;
+            text-indent: 20px;
+            border: 0;
+            outline: 0;
+            background: transparent;
+            color: #000000;
+            font-family: 'Handlee', cursive;
+            font-weight: bold;
+            font-size: 18px;
+            box-sizing: border-box;
+            z-index: 1;
+        }
+        
+        .paper-items {
+            font-family: 'Handlee', cursive;
+            line-height: 30px;
+            color: #000000;
         }
     </style>
 </head>
 
 <body>
-    <h3 style="text-align:center;"><?php echo $_POST['Date'];?><br><br>
-    <?php echo $_POST['Story'];?><br></h3>
-    <h5 align="right"> Form : <?php echo $_POST['name'];?></h5><br>
-    <?php echo $_POST['feeling'];
-    $text = $_POST['feeling'];
-    if ($text=="sad")
-    {
-        echo "สู้ๆ";
-    }
-    elseif ($text=="normal")
-    {
-        echo "ทำต่อไป";
-    }
-    elseif ($text=="happy")
-    {
-        echo "ดีแล้วนะ";
-    }
-    ?>
-    </body>
+    <div class="paper">
+        <div class="paper-content">
+            <div class="paper-head">
+                <div class="paper-items">
+                    <b>Diary : <?php $_POST['Diary']?></b>
+                </div>
+                <div class="paper-items">
+                    <b> by : <?php $_POST['name']?></b>
+                </div>
+                <div class="paper-items">
+                    <b> Date : <?php $_POST['Date']?></b>
+                </div>
+                <div class="paper-items-text">
+                    <textarea readonly><?php $_POST['Story']?></textarea>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
 
 </html>
