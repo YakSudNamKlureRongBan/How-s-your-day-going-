@@ -1,278 +1,155 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="fullpage.css">
-    <style>
-        #imgg {
-        background: url(morning.png);
-        background-repeat: no-repeat;
-        background-size: 100% 100%;
-    }
-
-        .field__input{ 
-      --uiFieldPlaceholderColor: var(--fieldPlaceholderColor, #767676);
-      
-      background-color: transparent;
-      border-radius: 0;
-      border: none;
-    
-      -webkit-appearance: none;
-      -moz-appearance: none;
-    
-      font-family: inherit;
-      font-size: inherit;
-    }
-    
-    .field__input:focus::-webkit-input-placeholder{
-      color: var(--uiFieldPlaceholderColor);
-    }
-    
-    .field__input:focus::-moz-placeholder{
-      color: var(--uiFieldPlaceholderColor);
-    }
-    
-    /*
-    =====
-    CORE STYLES
-    =====
-    */
-    
-    .field{
-      --uiFieldBorderWidth: var(--fieldBorderWidth, 2px);
-      --uiFieldPaddingRight: var(--fieldPaddingRight, 1rem);
-      --uiFieldPaddingLeft: var(--fieldPaddingLeft, 1rem);   
-      --uiFieldBorderColorActive: var(--fieldBorderColorActive, rgba(22, 22, 22, 1));
-    
-      display: var(--fieldDisplay, inline-flex);
-      position: relative;
-      font-size: var(--fieldFontSize, 1rem);
-    }
-    
-    .field__input{
-      box-sizing: border-box;
-      width: var(--fieldWidth, 100%);
-      height: var(--fieldHeight, 4rem);
-      padding: var(--fieldPaddingTop, 1.25rem) var(--uiFieldPaddingRight) var(--fieldPaddingBottom, .5rem) var(--uiFieldPaddingLeft);
-      border-bottom: var(--uiFieldBorderWidth) solid var(--fieldBorderColor, rgba(0, 0, 0, .25));  
-    }
-    
-    .field__input:focus{
-      outline: none;
-    }
-    
-    .field__input::-webkit-input-placeholder{
-      opacity: 0;
-      transition: opacity .2s ease-out;
-    }
-    
-    .field__input::-moz-placeholder{
-      opacity: 0;
-      transition: opacity .2s ease-out;
-    }
-    
-    .field__input:focus::-webkit-input-placeholder{
-      opacity: 1;
-      transition-delay: .2s;
-    }
-    
-    .field__input:focus::-moz-placeholder{
-      opacity: 1;
-      transition-delay: .2s;
-    }
-    
-    .field__label-wrap{
-      box-sizing: border-box;
-      pointer-events: none;
-      cursor: text;
-    
-      position: absolute;
-      top: 0;
-      right: 0;
-      bottom: 0;
-      left: 0;
-    }
-    
-    .field__label-wrap::after{
-      content: "";
-      box-sizing: border-box;
-      width: 100%;
-      height: 0;
-      opacity: 0;
-    
-      position: absolute;
-      bottom: 0;
-      left: 0;
-    }
-    
-    .field__input:focus ~ .field__label-wrap::after{
-      opacity: 1;
-    }
-    
-    .field__label{
-      position: absolute;
-      left: var(--uiFieldPaddingLeft);
-      top: calc(50% - .5em);
-    
-      line-height: 1;
-      font-size: var(--fieldHintFontSize, inherit);
-    
-      transition: top .2s cubic-bezier(0.9, -0.15, 0.1, 1.15), opacity .2s ease-out, font-size .2s ease-out;
-      will-change: bottom, opacity, font-size;
-    }
-    
-    .field__input:focus ~ .field__label-wrap .field__label,
-    .field__input:not(:placeholder-shown) ~ .field__label-wrap .field__label{
-      --fieldHintFontSize: var(--fieldHintFontSizeFocused, .75rem);
-    
-      top: var(--fieldHintTopHover, .25rem);
-    }
-    
-    /* 
-    effect 1
-    */
-    
-    .field_v1 .field__label-wrap::after{
-      border-bottom: var(--uiFieldBorderWidth) solid var(--uiFieldBorderColorActive);
-      transition: opacity .2s ease-out;
-      will-change: opacity;
-    }
-    
-    /* 
-    effect 2
-    */
-    
-    .field_v2 .field__label-wrap{
-      overflow: hidden;
-    }
-    
-    .field_v2 .field__label-wrap::after{
-      border-bottom: var(--uiFieldBorderWidth) solid var(--uiFieldBorderColorActive);
-      transform: translate3d(-105%, 0, 0);
-      will-change: transform, opacity;
-      transition: transform .285s ease-out .2s, opacity .2s ease-out .2s;
-    }
-    
-    .field_v2 .field__input:focus ~ .field__label-wrap::after{
-      transform: translate3d(0, 0, 0);
-      transition-delay: 0;
-    }
-    
-    /*
-    effect 3
-    */
-    
-    .field_v3 .field__label-wrap::after{
-      border: var(--uiFieldBorderWidth) solid var(--uiFieldBorderColorActive);
-      will-change: opacity, height;
-      transition: height .2s ease-out, opacity .2s ease-out;
-    }
-    
-    .field_v3 .field__input:focus ~ .field__label-wrap::after{
-      height: 100%;
-    }
-    
-    /*
-    =====
-    LEVEL 4. SETTINGS
-    =====
-    */
-    
-    .field{
-      --fieldBorderColor: #DBCAB3;
-      --fieldBorderColorActive: #F89C1F;
-    }
-    
-    /*
-    =====
-    DEMO
-    =====
-    */
-    
-    body{
-      font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Open Sans, Ubuntu, Fira Sans, Helvetica Neue, sans-serif;
-      margin: 0;
-    
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-    }
-    
-    .page{
-      box-sizing: border-box;
-      width: 100%;
-      max-width: 480px;
-      margin: auto;
-      padding: 1rem;
-    
-      display: grid;
-      grid-gap: 30px;
-    }
-    </style>
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/fullpage.css">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="vendor/bootstrap/css/bootstrap.min.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="vendor/animate/animate.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="vendor/css-hamburgers/hamburgers.min.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="vendor/animsition/css/animsition.min.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="vendor/select2/select2.min.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="vendor/daterangepicker/daterangepicker.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="css/util.css">
+    <link rel="stylesheet" type="text/css" href="css/main2.css">
+    <!--===============================================================================================-->
+    <title>PSIT Project</title>
 </head>
+
 <body>
-    <script src="fullpage.js"></script>
-    <div id="fullpage">
+    <script src="js/fullpage.js"></script>
+    <div id="fullPage">
+        <div class="section s1">
+            <section>
+                <nav>
+                    <div class="nav-container">
+                        <div id="logo">
+                            <span>PSIT Project</span>
+                        </div>
+                        <ul class="menu">
+                            <li><a href="http://127.0.0.1:5500/index_contact.html#">About us</a></li>
+                        </ul>
+                    </div>
+                </nav>
+            </section>
+            <!-- ====================nav==================== -->
+            <div class="big-text">
+                <span>How's your day going?</span>
+            </div>
 
+            <!-- ====================big text==================== -->
 
-        <div class="section 1">
-            <img src="night.png"  style="width:100%;height:100%">
-            <div class="w3-display-middle w3-large">
-                <h1 class="w3-xxlarge w3-text-white w3-wide w3-animate-fading" style="text-shadow:5px 5px 0 #444"><b>HOW'S YOUR DAY GOING?</b></h1>
+            <div class="intro">
+                <div class="intro-text">
+                    <h1 class="hide">
+                        <span class="text">Presented by</span>
+                    </h1>
+                    <br>
+                    <h1 class="hide">
+                        <span class="text">YakSudNamKlureRongBan</span>
+                    </h1>
+                </div>
+            </div>
+            <!-- ====================intro==================== -->
+            <div class="slider"></div>
+            <!-- ====================slider==================== -->
+        </div>
+        <!-- ====================end s1==================== -->
+        <div class="section s2">
+            <div class="contant-about-project">
+                <span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quos magni suscipit culpa quidem, alias atque placeat officiis vero deleniti nulla inventore recusandae. Beatae, necessitatibus! Eos sequi adipisci animi placeat suscipit.</span>
             </div>
         </div>
+        <!-- ====================end s2==================== -->
+        <div class="section s3">
+            <div class="container-contact100">
 
-        <div class="section 2">
-            <img src="yen.png"  style="width:100%;height:100%">
-            <div class="w3-display-middle w3-large">
-                <div class="w3-panel w3-center w3-leftbar">
-                    <p><i class="w3-serif w3-xlarge">
-                    <span style="font-size:150px;line-height:0.6em;opacity:0.2">&#10004;</span>
-                    Programming in C will slowly decline.<br>
-                    Programming in JavaScript will be more important.</i></p>
-                </div>        
+                <div class="wrap-contact100">
+                    <form class="contact100-form validate-form" method="POST" action="show_text.php">
+                        <span class="contact100-form-title">
+                    Story
+                </span>
+
+                        <div class="wrap-input100 validate-input" data-validate="Please enter your name">
+                            <input class="input100" type="text" id="name" name="name" placeholder="Name">
+                            <span class="focus-input100 "></span>
+                        </div>
+                        <!-- ====================input name==================== -->
+                        <div class="wrap-input100 validate-input" data-validate="Please enter your date">
+                            <input class="input100" type="date" id="Date" name="Date" name="appointmentdate" min="2020-01-01" max="2030-12-31" step="1" placeholder="e.g. 01/10/2020">
+                            <span class="focus-input100"></span>
+                        </div>
+                        <!-- ====================input date==================== -->
+                        <div class="wrap-input100 validate-input" data-validate="Please enter your diary">
+                            <input class="input100" type="text" id="Diary" name="Diary" placeholder="Diary">
+                            <span class="focus-input100 "></span>
+                        </div>
+                        <!-- ====================input diary name==================== -->
+                        <div class="wrap-input100 validate-input" data-validate="Please enter your message">
+                            <textarea class="input100" id="Story" name="Story" placeholder="Tell us about story."></textarea>
+                            <span class="focus-input100"></span>
+                        </div>
+                        <!-- ====================input diary==================== -->
+                        <div class="mybuttun">
+                            <a style="color: white;">MOOD</a>&nbsp;&nbsp;&nbsp;&nbsp;
+                            <input type="radio" id="sad" name="feeling" value="sad">
+                            <label for="sad"><img src="img/iconsadcut.png" width="85px"></label>&nbsp;&nbsp;&nbsp;&nbsp;
+                            <input type="radio" id="normal" name="feeling" value="normal">
+                            <label for="normal"><img src="img/iconnormalcut.png" width="70px"></label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            <input type="radio" id="happy" name="feeling" value="happy">
+                            <label for="happy"><img src="img/iconhappycut.png" width="70px"></label>
+                        </div>
+                        <!-- ====================select mood==================== -->
+                        <div class="container-contact100-form-btn">
+                            <button class="contact100-form-btn">
+                        <span>
+                        <i class="fa fa-paper-plane-o m-r-6" aria-hidden="true"></i>
+                            Send
+                        </span>
+                    </button>
+                            <!-- ====================send button==================== -->
+                        </div>
+                    </form>
+                </div>
+                <!-- ====================end form==================== -->
             </div>
         </div>
-
-        <div class="section 3" id="imgg">
-            <div class="page">
-                <label class="field field_v1">
-                  <input type="date" class="field__input" name="appointmentdate" min="2020-01-01" max="2030-12-31" step="1" placeholder="e.g. 01/10/2020">
-                  <form action="../../form-result.php" method="post" target="_blank">
-                  </form>
-                  <span class="field__label-wrap">
-                    <span class="field__label">Date :</span>
-                  </span>
-                </label>
-                <label class="field field_v2">
-                  <input class="field__input" placeholder="e.g. Chotipat">
-                  <span class="field__label-wrap">
-                    <span class="field__label">Name :</span>
-                  </span>
-                </label>
-                <button type="button" class="btn">submit</button>   
-              </div>
-        </div>
-
-        <div class="section 4">
-        </div>
-        <div class="section 5">
-            <h1 style="text-align:center">Diary</h1>
-        </div>
-
+        <!-- ====================end s3==================== -->
     </div>
 
-    <script>
-        new fullpage('#fullpage', {
-            autoScrolling: true,
-            navigation: true
-        })
-    </script>
+    <div id="dropDownSelect1"></div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/gsap.min.js" integrity="sha512-IQLehpLoVS4fNzl7IfH8Iowfm5+RiMGtHykgZJl9AWMgqx0AmJ6cRWcB+GaGVtIsnC4voMfm8f2vwtY+6oPjpQ==" crossorigin="anonymous"></script>
+    <!-- ====================gsap for animation==================== -->
+    <script src="vendor/jquery/jquery-3.2.1.min.js"></script>
+    <!--===============================================================================================-->
+    <script src="vendor/animsition/js/animsition.min.js"></script>
+    <!--===============================================================================================-->
+    <script src="vendor/bootstrap/js/popper.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+    <!--===============================================================================================-->
+    <script src="vendor/select2/select2.min.js"></script>
+    <!--===============================================================================================-->
+    <script src="vendor/daterangepicker/moment.min.js"></script>
+    <script src="vendor/daterangepicker/daterangepicker.js"></script>
+    <!--===============================================================================================-->
+    <script src="vendor/countdowntime/countdowntime.js"></script>
+    <!--===============================================================================================-->
+    <script src="js/main.js"></script>
+    <script src="js/app.js"></script>
 </body>
+
 </html>
