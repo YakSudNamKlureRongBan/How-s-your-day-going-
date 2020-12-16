@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Itim&display=swap');
 * {
     margin: 0;
     padding: 0;
@@ -6,6 +7,7 @@
 
 body {
     background: seashell;
+    font-family: 'Itim', cursive;
 }
 
 .grid-container {
@@ -18,38 +20,46 @@ header {
     width: auto;
     background: black;
     margin: 0 auto;
+    font-family: 'Itim', cursive;
 }
 
 .about-project {
     padding: 10px;
     text-align: center;
     font-size: 2rem;
+    font-family: 'Itim', cursive;
 }
 
 .long-text {
     padding: 10px;
     font-size: 2rem;
     text-indent: 70px;
+    font-family: 'Itim', cursive;
+    /* text-align: center; */
 }
 
 .meet-our-teams {
     text-align: center;
     font-size: 2rem;
+    font-family: 'Itim', cursive;
 }
 
 #logo {
     color: white;
     margin: 20px;
     font-size: 2rem;
+    font-family: 'Itim', cursive;
 }
 
 .grid-items {
     text-align: right;
     margin-top: 25px;
+    font-family: 'Itim', cursive;
 }
 
 ul.home-page li {
     list-style: none;
+    font-family: 'Itim', cursive;
 }
 
 ul.home-page a {
@@ -59,6 +69,7 @@ ul.home-page a {
     padding: 5px 10px;
     font-size: 1.5rem;
     margin: 30px;
+    font-family: 'Itim', cursive;
 }
 
 ul.home-page a:hover {
@@ -69,20 +80,35 @@ ul.home-page a:hover {
 
 .grid-teams {
     display: grid;
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(5, 1fr);
     grid-gap: 1rem;
     margin-top: 40px;
     justify-items: center;
+    text-align: center;
+    font-family: 'Itim', cursive;
 }
 
-.content-teams-grid {
-    border: 5px solid rgb(99, 185, 224);
-    width: 400px;
-    margin: 0;
-    height: 300px;
-    text-align: center;
-    padding-top: 200px;
-    background: white;
-    border-radius: 20px;
+.grid-teams-items-earth {
+    grid-column-start: 2;
+}
+
+.grid-teams-items-phu {
+    grid-column-start: 2;
+    grid-row-start: 2;
+}
+
+.grid-teams-items-praew {
+    grid-column-start: 2;
+    grid-row-start: 4;
+}
+
+.grid-teams-items-pang {
+    grid-row-start: 3;
+    grid-column-start: 2;
+}
+
+.grid-teams-items-tax {
+    grid-row-start: 5;
+    grid-column-start: 2;
 }

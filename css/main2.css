@@ -1,11 +1,7 @@
 /*//////////////////////////////////////////////////////////////////
 [ FONT ]*/
 
-@font-face {
-    font-family: Ubuntu-Bold;
-    src: url('../fonts/ubuntu/Ubuntu-Bold.ttf');
-}
-
+@import url('https://fonts.googleapis.com/css2?family=Itim&display=swap');
 
 /*//////////////////////////////////////////////////////////////////
 [ RESTYLE TAG ]*/
@@ -19,14 +15,14 @@
 body,
 html {
     height: 100%;
-    font-family: Ubuntu-Bold, sans-serif;
+    font-family: 'Itim', cursive;
 }
 
 
 /*---------------------------------------------*/
 
 a {
-    font-family: Ubuntu-Bold;
+    font-family: 'Itim', cursive;
     font-size: 14px;
     line-height: 1.7;
     color: #666666;
@@ -58,7 +54,7 @@ h6 {
 }
 
 p {
-    font-family: Ubuntu-Bold;
+    font-family: 'Itim', cursive;
     font-size: 14px;
     line-height: 1.7;
     color: #666666;
@@ -195,7 +191,7 @@ iframe {
 
 .contact100-form-title {
     display: block;
-    font-family: Ubuntu-Bold;
+    font-family: 'Itim', cursive;
     font-size: 30px;
     color: #403866;
     line-height: 0.5;
@@ -223,7 +219,7 @@ iframe {
     width: 100%;
     background: #fff;
     border-radius: 31px;
-    font-family: Ubuntu-Bold;
+    font-family: 'Itim', cursive;
     font-size: 18px;
     color: #8f8fa1;
     line-height: 1;
@@ -300,7 +296,7 @@ textarea.input100 {
     height: 50px;
     background-color: transparent;
     border-radius: 31px;
-    font-family: Ubuntu-Bold;
+    font-family: 'Itim', cursive;
     font-size: 16px;
     color: #fff;
     line-height: 1.2;
@@ -366,7 +362,7 @@ textarea.input100 {
     transform: translateY(-50%);
     right: 10px;
     pointer-events: none;
-    font-family: Ubuntu-Bold;
+    font-family: 'Itim', cursive;
     color: #c80000;
     font-size: 13px;
     line-height: 1.4;
@@ -414,16 +410,4 @@ textarea.input100 {
 
 .mybuttun img:hover {
     opacity: 0.8;
-}
-
-.contant-about-project {
-    margin: 20px;
-    padding: 15px;
-    border: 1px solid white;
-    text-indent: 50px;
-    background-color: white;
-    border-radius: 10px;
-    font-size: 1.5rem;
-    opacity: 0.78;
-    color: rgb(0, 0, 0);
 }
